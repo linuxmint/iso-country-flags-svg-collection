@@ -812,7 +812,7 @@ sub svg2png {
     # is $out older than $in?
 
     if (!-e $out || -M $out > -M $in) {
-		my $cmd = "inkscape -z -e ".$out." -w ".$w." -h ".$h." ".$in;
+		my $cmd = "inkscape -z -o ".$out." -w ".$w." -h ".$h." ".$in;
 		if ($h <= 128) {
 			$cmd .= " && convert ".$out." -unsharp 0x1 ".$out;
 		}
